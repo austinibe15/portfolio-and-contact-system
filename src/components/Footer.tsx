@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Resume */}
           <a
-            href="/resume/EZENWA%20AUGUSTINE%20IBE-.pdf"
+            href="/resume/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 font-mono text-[10px] tracking-[0.12em] text-white/40 transition hover:text-white"

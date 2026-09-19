@@ -57,7 +57,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="/resume"
+            href="/resume/resume.pdf"
             className="font-mono text-[10px] tracking-[0.12em] text-white/45 transition hover:text-white"
           >
             Resume
@@ -109,7 +109,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="/resume"
+                href="/resume/resume.pdf"
                 className="font-mono text-xs tracking-[0.12em] text-white/50 hover:text-white"
               >
                 Resume
