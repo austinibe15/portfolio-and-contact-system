@@ -1,8 +1,15 @@
 import type { Handler } from "@netlify/functions";
 import mysql from "mysql2/promise";
 import { Resend } from "resend";
+import fs from "node:fs";
+import path from "node:path";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const ca = fs.readFileSync(
+  path.join(process.cwd(), "netlify", "functions", "ca.pem"),
+  "utf8"
+);
 
 function escapeHtml(value: string) {
   return value
@@ -49,6 +56,9 @@ export const handler: Handler = async (event) => {
     if (name.length > 100) {
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           message: "Name is too long.",
         }),
@@ -58,6 +68,9 @@ export const handler: Handler = async (event) => {
     if (email.length > 255) {
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           message: "Email is too long.",
         }),
@@ -67,6 +80,9 @@ export const handler: Handler = async (event) => {
     if (subject.length > 255) {
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           message: "Subject is too long.",
         }),
@@ -76,6 +92,9 @@ export const handler: Handler = async (event) => {
     if (message.length > 5000) {
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           message: "Message is too long.",
         }),
@@ -87,13 +106,14 @@ export const handler: Handler = async (event) => {
     if (!emailPattern.test(email)) {
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           message: "Please provide a valid email address.",
         }),
       };
     }
-
-    const ca = process.env.DB_CA_CERT ? Buffer.from(process.env.DB_CA_CERT, "base64").toString("utf8") : undefined;
 
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
