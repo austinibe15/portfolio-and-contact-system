@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
 import SectionHeading from "../components/SectionHeading";
@@ -411,13 +412,13 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/85"
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-medium text-slate-950 transition hover:bg-cyan-300"
               >
                 Contact me
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
               <a
                 href="https://github.com/austinibe15"
@@ -457,3 +458,10 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
+
