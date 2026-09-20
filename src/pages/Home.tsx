@@ -127,7 +127,7 @@ export default function Home() {
                 <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
                   <a
                     href="/work"
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition duration-300 hover:bg-white/85"
+                    className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-medium text-slate-950 transition duration-300 hover:bg-cyan-300"
                   >
                     View selected work
                     <ArrowUpRight size={15} />
@@ -458,10 +458,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-
-
-
