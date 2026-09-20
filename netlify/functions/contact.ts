@@ -145,11 +145,23 @@ export const handler: Handler = async (event) => {
     const safeSubject = escapeHtml(subject);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
-    const { error } = await resend.emails.send({
-      from:
-        process.env.EMAIL_FROM ||
-        "Portfolio Contact <onboarding@resend.dev>",
-      to: [process.env.CONTACT_EMAIL || "austinibe15@gmail.com"],
+    const from =
+      process.env.EMAIL_FROM ||
+      "Portfolio Contact <onboarding@resend.dev>";
+
+    const to =
+      process.env.CONTACT_EMAIL ||
+      "austinibe15@gmail.com";
+
+    console.log("Attempting email delivery:", {
+      from,
+      to,
+      hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
+    });
+
+    const { data, error } = await resend.emails.send({
+      from,
+      to: [to],
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
@@ -179,7 +191,7 @@ ${message}
     });
 
     if (error) {
-      console.error("Email delivery failed:", error);
+      console.error("Resend email error:", error);
 
       return {
         statusCode: 500,
@@ -189,9 +201,12 @@ ${message}
         body: JSON.stringify({
           message:
             "Your message was saved, but the email notification could not be sent.",
+          error: error.message || String(error),
         }),
       };
     }
+
+    console.log("Email sent successfully:", data?.id);
 
     return {
       statusCode: 200,
@@ -205,6 +220,11 @@ ${message}
   } catch (error) {
     console.error("Contact function error:", error);
 
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : String(error);
+
     return {
       statusCode: 500,
       headers: {
@@ -212,6 +232,7 @@ ${message}
       },
       body: JSON.stringify({
         message: "Something went wrong. Please try again.",
+        error: errorMessage,
       }),
     };
   }
