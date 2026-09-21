@@ -145,7 +145,7 @@ export default function About() {
 
                   <div>
                     <h2 className="text-xl font-medium sm:text-2xl">
-                      Postgraduate Studies
+                      Postgraduate Diploma
                     </h2>
 
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-white/50">
