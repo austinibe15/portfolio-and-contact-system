@@ -1,3 +1,4 @@
+
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
@@ -130,40 +131,32 @@ export default function ProjectDetails() {
     (item) => item.slug === slug
   );
 
-  /*
-   * ---------------------------------------------------------
-   * INVALID PROJECT
-   * ---------------------------------------------------------
-   */
-
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#0b0b0b] text-white">
-        <main className="mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-6 py-24 lg:px-10">
-
-          <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+      <div className="min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
+        <main className="mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-4 py-24 sm:px-6 sm:py-28 lg:px-10">
+          <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
             404 / PROJECT NOT FOUND
           </p>
 
-          <h1 className="mt-5 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.025em] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 max-w-3xl break-words text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-5xl lg:text-6xl">
             This project does not exist.
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-white/45">
-            The project you're looking for could not be found in the
+          <p className="mt-5 max-w-xl break-words text-[15px] leading-7 text-white/45 sm:text-base">
+            The project you&apos;re looking for could not be found in the
             portfolio project registry.
           </p>
 
           <div className="mt-8">
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03]"
+              className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03] sm:px-6"
             >
-              <ArrowLeft size={16} />
-              Back to work
+              <ArrowLeft size={16} className="shrink-0" />
+              <span>Back to work</span>
             </Link>
           </div>
-
         </main>
 
         <Footer />
@@ -174,78 +167,54 @@ export default function ProjectDetails() {
   const study = caseStudies[project.slug];
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
-
+    <div className="min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
       <main>
-
-        {/* =========================================================
-            PROJECT HERO
-        ========================================================= */}
-
-        <section className="border-b border-white/10 px-6 pb-16 pt-28 sm:pb-20 sm:pt-32 lg:px-10 lg:pb-24 lg:pt-36">
-
-          <div className="mx-auto max-w-7xl">
-
+        {/* PROJECT HERO */}
+        <section className="border-b border-white/10 px-4 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10 lg:pb-24 lg:pt-36">
+          <div className="mx-auto min-w-0 max-w-7xl">
             {/* Back navigation */}
-
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-white/35 transition hover:text-white"
+              className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-white/35 transition hover:text-white sm:text-xs"
             >
-              <ArrowLeft size={14} />
-              ALL WORK
+              <ArrowLeft size={14} className="shrink-0" />
+              <span>ALL WORK</span>
             </Link>
 
-
             {/* Hero content */}
-
-            <div className="mt-12 grid gap-10 lg:mt-14 lg:grid-cols-[1fr_280px]">
-
-              <div>
-
+            <div className="mt-10 grid min-w-0 gap-10 sm:mt-12 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_280px]">
+              <div className="min-w-0">
                 {/* Project category */}
-
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/35">
+                <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
                   {project.number} / {project.category}
                 </p>
 
-
                 {/* Project title */}
-
-                <h1 className="mt-4 max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                <h1 className="mt-4 max-w-4xl break-words text-3xl font-medium leading-[1.04] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
                   {project.title}
                 </h1>
 
-
                 {/* Project subtitle */}
-
-                <p className="mt-4 text-lg text-white/40 sm:text-xl">
+                <p className="mt-4 max-w-3xl break-words text-base leading-6 text-white/40 sm:text-xl sm:leading-7">
                   {project.subtitle}
                 </p>
 
-
                 {/* Project description */}
-
-                <p className="mt-6 max-w-3xl text-base leading-7 text-white/50 sm:text-lg sm:leading-8">
+                <p className="mt-6 max-w-3xl break-words text-[15px] leading-7 text-white/50 sm:text-lg sm:leading-8">
                   {project.description}
                 </p>
 
-
-                {/* =====================================================
-                    PROJECT ACTIONS
-                ===================================================== */}
-
-                <div className="mt-7 flex flex-wrap gap-3">
-
+                {/* Project actions */}
+                <div className="mt-7 flex min-w-0 flex-wrap gap-3">
                   {project.demo && (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-white/85"
+                      className="inline-flex max-w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/85 sm:px-6"
                     >
-                      Live demo
-                      <ArrowUpRight size={16} />
+                      <span>Live demo</span>
+                      <ArrowUpRight size={16} className="shrink-0" />
                     </a>
                   )}
 
@@ -254,299 +223,206 @@ export default function ProjectDetails() {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03]"
+                      className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03] sm:px-6"
                     >
-                      View source
-                      <ArrowUpRight size={16} />
+                      <span>View source</span>
+                      <ArrowUpRight size={16} className="shrink-0" />
                     </a>
                   )}
-
                 </div>
-
               </div>
 
-
-              {/* =====================================================
-                  PROJECT META
-              ===================================================== */}
-
-              <aside className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-
-                {/* Status */}
-
+              {/* Project metadata */}
+              <aside className="min-w-0 border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
                 <div>
-                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                     STATUS
                   </p>
 
-                  <p className="mt-2 text-sm leading-6 text-white/55">
+                  <p className="mt-2 break-words text-sm leading-6 text-white/55">
                     {study?.status ?? "Project"}
                   </p>
                 </div>
 
-
-                {/* Technology */}
-
                 <div className="mt-7">
-
-                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                     TECHNOLOGY
                   </p>
 
-                  <div className="mt-3 flex flex-wrap gap-2">
-
+                  <div className="mt-3 flex min-w-0 flex-wrap gap-2">
                     {project.technologies.map((technology) => (
                       <TechBadge
                         key={technology}
                         name={technology}
                       />
                     ))}
-
                   </div>
-
                 </div>
-
               </aside>
-
             </div>
-
           </div>
-
         </section>
 
-
-        {/* =========================================================
-            CASE STUDY
-        ========================================================= */}
-
-        <section className="px-6 py-16 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="mx-auto max-w-7xl">
-
-            <div className="grid gap-12 lg:grid-cols-[180px_1fr] lg:gap-16">
-
+        {/* CASE STUDY */}
+        <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <div className="grid min-w-0 gap-10 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-16">
               {/* Section marker */}
-
               <div>
-                <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 lg:sticky lg:top-10">
+                <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 lg:sticky lg:top-10 sm:text-xs">
                   CASE STUDY
                 </p>
               </div>
 
-
               {/* Case-study content */}
-
-              <div className="max-w-4xl">
-
-                {/* =====================================================
-                    OVERVIEW
-                ===================================================== */}
-
-                <div className="border-b border-white/10 pb-14">
-
-                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+              <div className="min-w-0 max-w-4xl">
+                {/* OVERVIEW */}
+                <div className="border-b border-white/10 pb-12 sm:pb-14">
+                  <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                     01 / OVERVIEW
                   </p>
 
-                  <h2 className="mt-4 text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
+                  <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
                     What I built
                   </h2>
 
-                  <p className="mt-5 text-base leading-7 text-white/50 sm:text-lg sm:leading-8">
+                  <p className="mt-5 break-words text-[15px] leading-7 text-white/50 sm:text-lg sm:leading-8">
                     {study?.overview ?? project.description}
                   </p>
-
                 </div>
 
-
-                {/* =====================================================
-                    PROBLEM
-                ===================================================== */}
-
+                {/* PROBLEM */}
                 {study?.problem && (
-                  <div className="border-b border-white/10 py-14">
-
-                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <div className="border-b border-white/10 py-12 sm:py-14">
+                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                       02 / PROBLEM
                     </p>
 
-                    <h2 className="mt-4 text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
+                    <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
                       The problem
                     </h2>
 
-                    <p className="mt-5 text-base leading-7 text-white/50 sm:text-lg sm:leading-8">
+                    <p className="mt-5 break-words text-[15px] leading-7 text-white/50 sm:text-lg sm:leading-8">
                       {study.problem}
                     </p>
-
                   </div>
                 )}
 
-
-                {/* =====================================================
-                    APPROACH
-                ===================================================== */}
-
+                {/* APPROACH */}
                 {study?.approach && (
-                  <div className="border-b border-white/10 py-14">
-
-                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <div className="border-b border-white/10 py-12 sm:py-14">
+                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                       03 / APPROACH
                     </p>
 
-                    <h2 className="mt-4 text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
+                    <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
                       Engineering approach
                     </h2>
 
-                    <p className="mt-5 text-base leading-7 text-white/50 sm:text-lg sm:leading-8">
+                    <p className="mt-5 break-words text-[15px] leading-7 text-white/50 sm:text-lg sm:leading-8">
                       {study.approach}
                     </p>
-
                   </div>
                 )}
 
-
-                {/* =====================================================
-                    ENGINEERING
-                ===================================================== */}
-
+                {/* ENGINEERING */}
                 {study?.engineering?.length > 0 && (
-                  <div className="border-b border-white/10 py-14">
-
-                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <div className="border-b border-white/10 py-12 sm:py-14">
+                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                       04 / ENGINEERING
                     </p>
 
-                    <h2 className="mt-4 text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
+                    <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
                       Engineering highlights
                     </h2>
 
-                    <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                    <div className="mt-7 grid min-w-0 gap-3 sm:grid-cols-2">
+                      {study.engineering.map((item, index) => (
+                        <div
+                          key={item}
+                          className="min-w-0 border border-white/10 p-4 transition-colors duration-300 hover:border-white/20 sm:p-5"
+                        >
+                          <span className="font-mono text-[10px] text-white/25">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
 
-                      {study.engineering.map(
-                        (item, index) => (
-                          <div
-                            key={item}
-                            className="border border-white/10 p-5 transition-colors duration-300 hover:border-white/20"
-                          >
-
-                            <span className="font-mono text-[10px] text-white/25">
-                              {String(index + 1).padStart(2, "0")}
-                            </span>
-
-                            <p className="mt-3 text-sm leading-6 text-white/55">
-                              {item}
-                            </p>
-
-                          </div>
-                        )
-                      )}
-
+                          <p className="mt-3 break-words text-sm leading-6 text-white/55">
+                            {item}
+                          </p>
+                        </div>
+                      ))}
                     </div>
-
                   </div>
                 )}
 
-
-                {/* =====================================================
-                    OUTCOME
-                ===================================================== */}
-
+                {/* OUTCOME */}
                 {study?.outcome && (
-                  <div className="border-b border-white/10 py-14">
-
-                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+                  <div className="border-b border-white/10 py-12 sm:py-14">
+                    <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                       05 / OUTCOME
                     </p>
 
-                    <h2 className="mt-4 text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
+                    <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.02em] sm:text-3xl lg:text-4xl">
                       What the project demonstrates
                     </h2>
 
-                    <p className="mt-5 text-base leading-7 text-white/50 sm:text-lg sm:leading-8">
+                    <p className="mt-5 break-words text-[15px] leading-7 text-white/50 sm:text-lg sm:leading-8">
                       {study.outcome}
                     </p>
-
                   </div>
                 )}
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
-
-        {/* =========================================================
-            TECHNOLOGY STACK
-        ========================================================= */}
-
-        <section className="border-y border-white/10 px-6 py-14 lg:px-10 lg:py-16">
-
-          <div className="mx-auto max-w-7xl">
-
-            <div className="grid gap-6 md:grid-cols-[180px_1fr] md:gap-10">
-
-              <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+        {/* TECHNOLOGY STACK */}
+        <section className="border-y border-white/10 px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <div className="grid min-w-0 gap-5 md:grid-cols-[180px_minmax(0,1fr)] md:gap-10">
+              <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                 TECHNOLOGY STACK
               </p>
 
-              <div className="flex flex-wrap gap-2">
-
+              <div className="flex min-w-0 flex-wrap gap-2">
                 {project.technologies.map((technology) => (
                   <TechBadge
                     key={technology}
                     name={technology}
                   />
                 ))}
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
-
-        {/* =========================================================
-            PROJECT LINKS
-        ========================================================= */}
-
-        <section className="px-6 py-16 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="mx-auto max-w-7xl">
-
+        {/* PROJECT LINKS */}
+        <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto min-w-0 max-w-7xl">
             <div className="max-w-3xl">
-
-              <p className="font-mono text-[10px] tracking-[0.18em] text-white/30">
+              <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 sm:text-xs">
                 EXPLORE THE PROJECT
               </p>
 
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.025em] sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 break-words text-2xl font-medium tracking-[-0.025em] sm:text-3xl lg:text-4xl">
                 See the implementation.
               </h2>
 
-              <p className="mt-5 max-w-2xl text-base leading-7 text-white/45 sm:text-lg sm:leading-8">
-                Explore the deployed application or inspect the source
-                code and implementation details on GitHub.
+              <p className="mt-5 max-w-2xl break-words text-[15px] leading-7 text-white/45 sm:text-lg sm:leading-8">
+                Explore the deployed application or inspect the source code
+                and implementation details on GitHub.
               </p>
 
-
-              {/* Links */}
-
-              <div className="mt-7 flex flex-wrap gap-3">
-
+              <div className="mt-7 flex min-w-0 flex-wrap gap-3">
                 {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-white/85"
+                    className="inline-flex max-w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/85 sm:px-6"
                   >
-                    Open live demo
-                    <ArrowUpRight size={16} />
+                    <span>Open live demo</span>
+                    <ArrowUpRight size={16} className="shrink-0" />
                   </a>
                 )}
 
@@ -555,59 +431,42 @@ export default function ProjectDetails() {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03]"
+                    className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white transition hover:border-white/40 hover:bg-white/[0.03] sm:px-6"
                   >
-                    View source
-                    <ArrowUpRight size={16} />
+                    <span>View source</span>
+                    <ArrowUpRight size={16} className="shrink-0" />
                   </a>
                 )}
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
-
-        {/* =========================================================
-            FOOTER NAVIGATION / CONTACT
-        ========================================================= */}
-
-        <section className="border-t border-white/10 px-6 py-12 lg:px-10">
-
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
-
+        {/* FOOTER NAVIGATION */}
+        <section className="border-t border-white/10 px-4 py-10 sm:px-6 sm:py-12 lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-white/35 transition hover:text-white"
+              className="inline-flex max-w-full items-center gap-2 font-mono text-[10px] tracking-[0.16em] text-white/35 transition hover:text-white sm:text-xs"
             >
-              <ArrowLeft size={14} />
-              BACK TO ALL WORK
+              <ArrowLeft size={14} className="shrink-0" />
+              <span>BACK TO ALL WORK</span>
             </Link>
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 text-sm text-white/50 transition hover:text-white"
+              className="inline-flex max-w-full items-center gap-2 text-sm text-white/50 transition hover:text-white"
             >
-              Start a conversation
-              <ArrowUpRight size={16} />
+              <span>Start a conversation</span>
+              <ArrowUpRight size={16} className="shrink-0" />
             </Link>
-
           </div>
-
         </section>
-
       </main>
 
-
-      {/* =========================================================
-          GLOBAL FOOTER
-      ========================================================= */}
-
       <Footer />
-
     </div>
   );
 }
+
+

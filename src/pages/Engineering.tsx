@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import SectionHeading from "../components/SectionHeading";
 import TechBadge from "../components/TechBadge";
@@ -82,17 +83,17 @@ const engineeringAreas = [
 
 export default function Engineering() {
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
       <Navbar />
 
       <main>
-        <section className="border-b border-white/10 px-6 pb-20 pt-40 lg:px-10 lg:pb-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-mono text-xs tracking-[0.22em] text-white/40">
+        <section className="border-b border-white/10 px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-10 lg:pb-20 lg:pt-40">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/40 sm:text-xs sm:tracking-[0.22em]">
               03 / ENGINEERING
             </p>
 
-            <h1 className="mt-8 max-w-5xl text-6xl font-medium leading-[0.95] tracking-[-0.05em] sm:text-7xl md:text-8xl">
+            <h1 className="mt-5 max-w-5xl break-words text-3xl font-medium leading-[1.02] tracking-[-0.035em] sm:mt-7 sm:text-5xl md:text-7xl lg:text-8xl">
               Across the
               <br />
               <span className="text-white/35">
@@ -100,7 +101,7 @@ export default function Engineering() {
               </span>
             </h1>
 
-            <p className="mt-10 max-w-2xl text-lg leading-8 text-white/50">
+            <p className="mt-7 max-w-2xl break-words text-[15px] leading-7 text-white/50 sm:mt-8 sm:text-base sm:leading-8 md:text-lg">
               My engineering work spans interfaces, APIs, backend systems,
               databases, mobile applications, AI-enabled software, and
               deployment workflows.
@@ -108,8 +109,8 @@ export default function Engineering() {
           </div>
         </section>
 
-        <section className="px-6 py-24 lg:px-10 lg:py-32">
-          <div className="mx-auto max-w-7xl">
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-32">
+          <div className="mx-auto min-w-0 max-w-7xl">
             <SectionHeading
               number="01"
               eyebrow="CAPABILITIES"
@@ -117,25 +118,25 @@ export default function Engineering() {
               description="I focus on understanding how the parts of a system work together rather than treating technologies as isolated skills."
             />
 
-            <div className="mt-12 grid border-l border-t border-white/10 md:grid-cols-2">
+            <div className="mt-8 grid min-w-0 border-l border-t border-white/10 sm:mt-10 md:grid-cols-2">
               {engineeringAreas.map((area) => (
                 <article
                   key={area.number}
-                  className="border-b border-r border-white/10 p-8 md:p-10"
+                  className="min-w-0 border-b border-r border-white/10 p-5 sm:p-7 md:p-8 lg:p-10"
                 >
-                  <span className="font-mono text-xs text-white/25">
+                  <span className="font-mono text-[10px] text-white/25 sm:text-xs">
                     {area.number}
                   </span>
 
-                  <h2 className="mt-8 text-2xl font-medium">
+                  <h2 className="mt-5 break-words text-xl font-medium sm:mt-7 sm:text-2xl">
                     {area.title}
                   </h2>
 
-                  <p className="mt-5 text-sm leading-7 text-white/45">
+                  <p className="mt-4 break-words text-[13px] leading-6 text-white/45 sm:mt-5 sm:text-sm sm:leading-7">
                     {area.description}
                   </p>
 
-                  <div className="mt-7 flex flex-wrap gap-2">
+                  <div className="mt-6 flex min-w-0 flex-wrap gap-2 sm:mt-7">
                     {area.technologies.map((technology) => (
                       <TechBadge
                         key={technology}
@@ -149,8 +150,8 @@ export default function Engineering() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 px-6 py-24 lg:px-10 lg:py-32">
-          <div className="mx-auto max-w-7xl">
+        <section className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-32">
+          <div className="mx-auto min-w-0 max-w-7xl">
             <SectionHeading
               number="02"
               eyebrow="ENGINEERING MINDSET"
@@ -158,26 +159,34 @@ export default function Engineering() {
               description="I approach implementation by considering the problem, users, architecture, data, integrations, constraints, validation, and maintainability together."
             />
 
-            <div className="mt-14 grid gap-6 md:grid-cols-4">
+            <div className="mt-10 grid gap-8 sm:mt-12 sm:gap-10 md:grid-cols-4 md:gap-6">
               {[
                 ["01", "Problem", "Understand what needs to be solved."],
                 ["02", "Architecture", "Define how the system should work."],
-                ["03", "Implementation", "Build and integrate the required components."],
-                ["04", "Validation", "Test assumptions and improve the result."],
+                [
+                  "03",
+                  "Implementation",
+                  "Build and integrate the required components.",
+                ],
+                [
+                  "04",
+                  "Validation",
+                  "Test assumptions and improve the result.",
+                ],
               ].map(([number, title, description]) => (
                 <div
                   key={number}
-                  className="border-t border-white/15 pt-5"
+                  className="min-w-0 border-t border-white/15 pt-5"
                 >
-                  <span className="font-mono text-xs text-white/30">
+                  <span className="font-mono text-[10px] text-white/30 sm:text-xs">
                     {number}
                   </span>
 
-                  <h3 className="mt-6 text-xl font-medium">
+                  <h3 className="mt-5 break-words text-lg font-medium sm:mt-6 sm:text-xl">
                     {title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-white/45">
+                  <p className="mt-3 break-words text-[13px] leading-6 text-white/45 sm:text-sm sm:leading-7">
                     {description}
                   </p>
                 </div>

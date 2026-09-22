@@ -22,7 +22,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300";
+    "inline-flex max-w-full min-w-0 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 sm:px-6 sm:py-3";
 
   const variants = {
     primary:
@@ -37,9 +37,9 @@ export default function Button({
 
   const content = (
     <>
-      <span>{children}</span>
+      <span className="min-w-0 break-words">{children}</span>
 
-      {showArrow && <ArrowUpRight size={16} />}
+      {showArrow && <ArrowUpRight size={16} className="shrink-0" />}
     </>
   );
 

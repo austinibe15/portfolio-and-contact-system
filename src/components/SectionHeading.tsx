@@ -12,18 +12,18 @@ export default function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="mb-12 grid gap-6 md:grid-cols-[160px_1fr]">
-      <div className="font-mono text-xs tracking-[0.2em] text-white/40">
+    <div className="mb-10 grid min-w-0 gap-5 sm:mb-12 sm:gap-6 md:grid-cols-[160px_minmax(0,1fr)]">
+      <div className="min-w-0 font-mono text-[10px] tracking-[0.18em] text-white/40 sm:text-xs sm:tracking-[0.2em]">
         {number} / {eyebrow}
       </div>
 
-      <div>
-        <h2 className="max-w-3xl text-4xl font-medium tracking-tight text-white md:text-6xl">
+      <div className="min-w-0">
+        <h2 className="max-w-3xl break-words text-3xl font-medium leading-tight tracking-[-0.025em] text-white sm:text-4xl md:text-6xl">
           {title}
         </h2>
 
         {description && (
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/55 md:text-lg">
+          <p className="mt-5 max-w-2xl break-words text-[15px] leading-7 text-white/55 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
             {description}
           </p>
         )}

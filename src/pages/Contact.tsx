@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import Navbar from "../components/Navbar";
@@ -80,18 +81,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
       <Navbar />
 
       <main>
         {/* HEADER */}
-        <section className="border-b border-white/10 px-6 pb-20 pt-40 lg:px-10 lg:pb-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-mono text-xs tracking-[0.22em] text-white/40">
+        <section className="border-b border-white/10 px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-10 lg:pb-20 lg:pt-40">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/40 sm:text-xs sm:tracking-[0.22em]">
               05 / CONTACT
             </p>
 
-            <h1 className="mt-8 max-w-5xl text-6xl font-medium leading-[0.95] tracking-[-0.05em] sm:text-7xl md:text-8xl">
+            <h1 className="mt-5 max-w-5xl break-words text-3xl font-medium leading-[1.02] tracking-[-0.035em] sm:mt-7 sm:text-5xl md:text-7xl lg:text-8xl">
               Let&apos;s build
               <br />
               <span className="text-white/35">
@@ -99,7 +100,7 @@ export default function Contact() {
               </span>
             </h1>
 
-            <p className="mt-10 max-w-2xl text-lg leading-8 text-white/50 md:text-xl">
+            <p className="mt-7 max-w-2xl break-words text-[15px] leading-7 text-white/50 sm:mt-8 sm:text-base sm:leading-8 md:text-lg">
               I&apos;m open to software engineering opportunities,
               technical collaborations, research-driven projects, and
               challenging product problems.
@@ -108,23 +109,23 @@ export default function Contact() {
         </section>
 
         {/* CONTACT CONTENT */}
-        <section className="px-6 py-24 lg:px-10 lg:py-32">
-          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_0.8fr]">
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-32">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.8fr)] lg:gap-20">
             {/* FORM */}
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+            <div className="min-w-0">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
                 SEND A MESSAGE
               </p>
 
               <form
-                className="mt-10 space-y-7"
+                className="mt-8 space-y-6 sm:mt-10 sm:space-y-7"
                 onSubmit={handleSubmit}
               >
                 {/* NAME */}
                 <div>
                   <label
                     htmlFor="name"
-                    className="font-mono text-xs text-white/40"
+                    className="font-mono text-[10px] text-white/40 sm:text-xs"
                   >
                     NAME
                   </label>
@@ -139,7 +140,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="mt-3 w-full border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-2.5 w-full min-w-0 border-b border-white/15 bg-transparent px-0 py-3.5 text-[15px] text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-3 sm:py-4 sm:text-base"
                     placeholder="Your name"
                   />
                 </div>
@@ -148,7 +149,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="font-mono text-xs text-white/40"
+                    className="font-mono text-[10px] text-white/40 sm:text-xs"
                   >
                     EMAIL
                   </label>
@@ -163,7 +164,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="mt-3 w-full border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-2.5 w-full min-w-0 border-b border-white/15 bg-transparent px-0 py-3.5 text-[15px] text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-3 sm:py-4 sm:text-base"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -172,7 +173,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="font-mono text-xs text-white/40"
+                    className="font-mono text-[10px] text-white/40 sm:text-xs"
                   >
                     SUBJECT
                   </label>
@@ -186,7 +187,7 @@ export default function Contact() {
                     value={form.subject}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="mt-3 w-full border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-2.5 w-full min-w-0 border-b border-white/15 bg-transparent px-0 py-3.5 text-[15px] text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-3 sm:py-4 sm:text-base"
                     placeholder="What would you like to discuss?"
                   />
                 </div>
@@ -195,7 +196,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="font-mono text-xs text-white/40"
+                    className="font-mono text-[10px] text-white/40 sm:text-xs"
                   >
                     MESSAGE
                   </label>
@@ -209,7 +210,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="mt-3 w-full resize-none border-b border-white/15 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="mt-2.5 w-full min-w-0 resize-none border-b border-white/15 bg-transparent px-0 py-3.5 text-[15px] text-white outline-none transition placeholder:text-white/20 focus:border-white/50 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-3 sm:py-4 sm:text-base"
                     placeholder="Tell me about the opportunity or project..."
                   />
                 </div>
@@ -217,7 +218,7 @@ export default function Contact() {
                 {/* STATUS */}
                 {status && (
                   <p
-                    className={`text-sm ${
+                    className={`break-words text-sm ${
                       status === "Message sent successfully."
                         ? "text-white/70"
                         : "text-white/50"
@@ -232,35 +233,42 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition hover:bg-white/85 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="inline-flex max-w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-white/85 disabled:cursor-not-allowed disabled:opacity-50 sm:px-7"
                 >
-                  {isSubmitting ? "Sending..." : "Send message"}
-                  {!isSubmitting && <ArrowUpRight size={16} />}
+                  <span>
+                    {isSubmitting ? "Sending..." : "Send message"}
+                  </span>
+
+                  {!isSubmitting && (
+                    <ArrowUpRight size={16} className="shrink-0" />
+                  )}
                 </button>
               </form>
             </div>
 
             {/* CONTACT INFORMATION */}
-            <aside>
-              <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+            <aside className="min-w-0 lg:pt-0">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
                 CONTACT INFORMATION
               </p>
 
-              <div className="mt-10 space-y-8">
+              <div className="mt-8 space-y-7 sm:mt-10 sm:space-y-8">
                 {/* EMAIL */}
                 <a
                   href="mailto:austinibe15@gmail.com"
-                  className="group flex items-start gap-4"
+                  className="group flex min-w-0 items-start gap-4"
                 >
                   <Mail
                     size={18}
-                    className="mt-1 text-white/30 transition group-hover:text-white"
+                    className="mt-1 shrink-0 text-white/30 transition group-hover:text-white"
                   />
 
-                  <div>
-                    <p className="text-sm text-white/40">Email</p>
+                  <div className="min-w-0">
+                    <p className="text-sm text-white/40">
+                      Email
+                    </p>
 
-                    <p className="mt-1 text-base text-white transition group-hover:text-white/70">
+                    <p className="mt-1 break-all text-[15px] text-white transition group-hover:text-white/70 sm:text-base">
                       austinibe15@gmail.com
                     </p>
                   </div>
@@ -271,17 +279,19 @@ export default function Contact() {
                   href="https://github.com/austinibe15"
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-start gap-4"
+                  className="group flex min-w-0 items-start gap-4"
                 >
                   <ArrowUpRight
                     size={18}
-                    className="mt-1 text-white/30 transition group-hover:text-white"
+                    className="mt-1 shrink-0 text-white/30 transition group-hover:text-white"
                   />
 
-                  <div>
-                    <p className="text-sm text-white/40">GitHub</p>
+                  <div className="min-w-0">
+                    <p className="text-sm text-white/40">
+                      GitHub
+                    </p>
 
-                    <p className="mt-1 text-base text-white transition group-hover:text-white/70">
+                    <p className="mt-1 break-all text-[15px] text-white transition group-hover:text-white/70 sm:text-base">
                       github.com/austinibe15
                     </p>
                   </div>
@@ -292,17 +302,19 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/ezenwa-augustine-ibe-9378359b"
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-start gap-4"
+                  className="group flex min-w-0 items-start gap-4"
                 >
                   <ArrowUpRight
                     size={18}
-                    className="mt-1 text-white/30 transition group-hover:text-white"
+                    className="mt-1 shrink-0 text-white/30 transition group-hover:text-white"
                   />
 
-                  <div>
-                    <p className="text-sm text-white/40">LinkedIn</p>
+                  <div className="min-w-0">
+                    <p className="text-sm text-white/40">
+                      LinkedIn
+                    </p>
 
-                    <p className="mt-1 text-base text-white transition group-hover:text-white/70">
+                    <p className="mt-1 text-[15px] text-white transition group-hover:text-white/70 sm:text-base">
                       LinkedIn profile
                     </p>
                   </div>
@@ -310,12 +322,12 @@ export default function Contact() {
               </div>
 
               {/* AVAILABILITY */}
-              <div className="mt-16 border-t border-white/10 pt-8">
-                <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+              <div className="mt-12 border-t border-white/10 pt-7 sm:mt-16 sm:pt-8">
+                <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
                   AVAILABILITY
                 </p>
 
-                <p className="mt-4 text-sm leading-7 text-white/45">
+                <p className="mt-4 break-words text-[13px] leading-6 text-white/45 sm:text-sm sm:leading-7">
                   Based in Nigeria. Open to remote software engineering
                   opportunities, technical collaborations, and selected
                   relocation opportunities.
@@ -327,8 +339,8 @@ export default function Contact() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 px-6 py-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-xs text-white/30 md:flex-row">
+      <footer className="border-t border-white/10 px-4 py-7 sm:px-6 sm:py-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-[9px] leading-5 text-white/30 sm:flex-row sm:items-center sm:justify-between sm:text-[10px]">
           <span>EZENWA AUGUSTINE IBE</span>
           <span>FULL-STACK SOFTWARE ENGINEER</span>
           <span>© 2026</span>
@@ -337,3 +349,4 @@ export default function Contact() {
     </div>
   );
 }
+

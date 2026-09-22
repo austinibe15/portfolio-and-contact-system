@@ -93,21 +93,21 @@ export default function Home() {
         {/* =========================================================
             HERO
         ========================================================== */}
-        <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 pb-16 pt-32 sm:pt-36 lg:px-10 lg:pb-20 lg:pt-40">
+        <section className="relative overflow-hidden border-b border-white/10 px-4 pb-12 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:min-h-screen lg:px-10 lg:pb-20 lg:pt-40">
           {/* Background technical rings */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute left-[48%] top-[18%] h-[420px] w-[420px] rounded-full border border-white/[0.035] sm:h-[560px] sm:w-[560px] lg:h-[700px] lg:w-[700px]" />
+            <div className="absolute left-[48%] top-[18%] h-[320px] w-[320px] rounded-full border border-white/[0.035] sm:h-[560px] sm:w-[560px] lg:h-[700px] lg:w-[700px]" />
 
-            <div className="absolute left-[48%] top-[18%] h-[560px] w-[560px] rounded-full border border-white/[0.025] sm:h-[720px] sm:w-[720px] lg:h-[900px] lg:w-[900px]" />
+            <div className="absolute left-[48%] top-[18%] h-[440px] w-[440px] rounded-full border border-white/[0.025] sm:h-[720px] sm:w-[720px] lg:h-[900px] lg:w-[900px]" />
 
             <div className="absolute bottom-0 left-0 h-px w-full bg-white/[0.025]" />
           </div>
 
-          <div className="relative mx-auto flex min-h-[calc(100vh-9rem)] max-w-7xl items-center">
-            <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-4">
+          <div className="relative mx-auto flex max-w-7xl items-center lg:min-h-[calc(100vh-9rem)]">
+            <div className="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-4">
               {/* LEFT: HERO COPY */}
               <div className="relative z-10">
-                <p className="mb-6 font-mono text-[10px] tracking-[0.25em] text-white/40 sm:text-xs">
+                <p className="mb-5 font-mono text-[10px] tracking-[0.22em] text-white/40 sm:mb-6 sm:text-xs">
                   FULL-STACK SOFTWARE ENGINEER
                 </p>
 
@@ -117,7 +117,7 @@ export default function Home() {
                   <span className="text-white/35">digital systems.</span>
                 </h1>
 
-                <p className="mt-6 max-w-xl text-base leading-7 text-white/50 sm:mt-7 sm:text-lg sm:leading-8">
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/50 sm:mt-7 sm:text-lg sm:leading-8">
                   I build software systems that turn complex real-world
                   problems into reliable digital products across AI, web,
                   mobile, and backend engineering.
@@ -142,7 +142,7 @@ export default function Home() {
                 </div>
 
                 {/* Discipline labels */}
-                <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[9px] tracking-[0.18em] text-white/30 sm:mt-12 sm:text-[10px]">
+                <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[9px] tracking-[0.16em] text-white/30 sm:mt-12 sm:text-[10px]">
                   <span>AI</span>
                   <span>·</span>
                   <span>WEB</span>
@@ -154,12 +154,12 @@ export default function Home() {
               </div>
 
               {/* RIGHT: PROFILE IMAGE */}
-              <div className="relative flex min-h-[400px] items-center justify-center lg:min-h-[580px]">
+              <div className="relative flex min-h-[320px] items-center justify-center sm:min-h-[400px] lg:min-h-[580px]">
                 {/* Outer technical ring */}
-                <div className="absolute h-[320px] w-[320px] rounded-full border border-white/[0.055] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]" />
+                <div className="absolute h-[280px] w-[280px] rounded-full border border-white/[0.055] sm:h-[420px] sm:w-[420px] lg:h-[520px] lg:w-[520px]" />
 
                 {/* Inner technical ring */}
-                <div className="absolute h-[270px] w-[270px] rounded-full border border-white/[0.04] sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]" />
+                <div className="absolute h-[235px] w-[235px] rounded-full border border-white/[0.04] sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]" />
 
                 {/* Small technical marker */}
                 <div className="absolute right-[8%] top-[18%] hidden items-center gap-2 font-mono text-[9px] tracking-[0.18em] text-white/25 xl:flex">
@@ -168,7 +168,7 @@ export default function Home() {
                 </div>
 
                 {/* Image frame */}
-                <div className="relative z-10 h-[360px] w-[270px] overflow-hidden sm:h-[450px] sm:w-[340px] lg:h-[550px] lg:w-[420px]">
+                <div className="relative z-10 h-[300px] w-[225px] overflow-hidden sm:h-[400px] sm:w-[300px] lg:h-[550px] lg:w-[420px]">
                   <div className="absolute inset-x-0 bottom-0 top-[8%] overflow-hidden">
                     <img
                       src="/images/profile.jpg"
@@ -184,7 +184,7 @@ export default function Home() {
                 </div>
 
                 {/* Bottom image label */}
-                <div className="absolute bottom-2 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap font-mono text-[9px] tracking-[0.2em] text-white/25">
+                <div className="absolute bottom-1 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap font-mono text-[8px] tracking-[0.16em] text-white/25 sm:bottom-2 sm:text-[9px] sm:tracking-[0.2em]">
                   ENGINEER / RESEARCHER / BUILDER
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function Home() {
         ========================================================== */}
         <section
           id="work"
-          className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24"
+          className="border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
         >
           <div className="mx-auto max-w-7xl">
             <SectionHeading
@@ -220,10 +220,7 @@ export default function Home() {
               {projects
                 .filter((project) => project.featured)
                 .map((project) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                  />
+                  <ProjectCard key={project.slug} project={project} />
                 ))}
             </div>
 
@@ -244,7 +241,7 @@ export default function Home() {
         ========================================================== */}
         <section
           id="engineering"
-          className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24"
+          className="border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
         >
           <div className="mx-auto max-w-7xl">
             <SectionHeading
@@ -258,7 +255,7 @@ export default function Home() {
               {capabilities.map((capability) => (
                 <div
                   key={capability.title}
-                  className="border-b border-r border-white/10 p-6 transition duration-300 hover:bg-white/[0.02] md:p-7"
+                  className="border-b border-r border-white/10 p-5 transition duration-300 hover:bg-white/[0.02] sm:p-6 md:p-7"
                 >
                   <h3 className="text-lg font-medium tracking-tight sm:text-xl">
                     {capability.title}
@@ -290,7 +287,7 @@ export default function Home() {
         {/* =========================================================
             APPROACH
         ========================================================== */}
-        <section className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+        <section className="border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionHeading
               number="03"
@@ -326,7 +323,7 @@ export default function Home() {
         ========================================================== */}
         <section
           id="research"
-          className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24"
+          className="border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
         >
           <div className="mx-auto max-w-7xl">
             <SectionHeading
@@ -362,7 +359,7 @@ export default function Home() {
         ========================================================== */}
         <section
           id="about"
-          className="border-b border-white/10 px-6 py-20 lg:px-10 lg:py-24"
+          className="border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
         >
           <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[140px_1fr]">
             <div className="font-mono text-xs tracking-[0.2em] text-white/40">
@@ -392,7 +389,7 @@ export default function Home() {
         ========================================================== */}
         <section
           id="contact"
-          className="px-6 py-20 lg:px-10 lg:py-24"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
         >
           <div className="mx-auto max-w-7xl">
             <p className="font-mono text-xs tracking-[0.2em] text-white/40">
@@ -437,7 +434,7 @@ export default function Home() {
       {/* =========================================================
           FOOTER
       ========================================================== */}
-      <footer className="border-t border-white/10 px-6 py-8 lg:px-10">
+      <footer className="border-t border-white/10 px-4 py-8 sm:px-6 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-[10px] text-white/30 sm:flex-row">
           <span>EZENWA AUGUSTINE IBE</span>
 

@@ -4,18 +4,18 @@ import Navbar from "../components/Navbar";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
       <Navbar />
 
       <main>
         {/* INTRO */}
-        <section className="border-b border-white/10 px-6 pb-20 pt-40 lg:px-10 lg:pb-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-mono text-xs tracking-[0.22em] text-white/40">
+        <section className="border-b border-white/10 px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10 lg:pb-28 lg:pt-40">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/40 sm:text-xs">
               02 / ABOUT
             </p>
 
-            <h1 className="mt-8 max-w-5xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-5xl break-words text-3xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
               Software engineering
               <br />
               <span className="text-white/35">
@@ -26,20 +26,20 @@ export default function About() {
         </section>
 
         {/* PROFILE */}
-        <section className="px-6 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[180px_1fr]">
-            <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-8 md:grid-cols-[180px_minmax(0,1fr)] md:gap-12">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
               PROFILE
             </p>
 
-            <div>
-              <p className="max-w-4xl text-xl font-medium leading-tight sm:text-2xl lg:text-3xl">
-                Ezenwa Augustine Ibe is a full-stack software engineer
-                building applications across web, backend, mobile, and
-                AI-enabled systems.
+            <div className="min-w-0">
+              <p className="max-w-4xl break-words text-xl font-medium leading-tight sm:text-2xl lg:text-3xl">
+                Ezenwa Augustine Ibe is a full-stack software engineer building
+                applications across web, backend, mobile, and AI-enabled
+                systems.
               </p>
 
-              <div className="mt-8 max-w-3xl space-y-5 text-base leading-8 text-white/50">
+              <div className="mt-7 max-w-3xl space-y-5 text-[15px] leading-7 text-white/50 sm:mt-8 sm:text-base sm:leading-8">
                 <p>
                   My work focuses on turning real-world requirements into
                   functional digital systems—from healthcare and education
@@ -65,16 +65,16 @@ export default function About() {
         </section>
 
         {/* EXPERIENCE */}
-        <section className="border-t border-white/10 px-6 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+        <section className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
               EXPERIENCE
             </p>
 
-            <div className="mt-10 space-y-0">
+            <div className="mt-8 space-y-0 sm:mt-10">
               {/* Freelance / Independent Development */}
-              <div className="grid gap-6 border-t border-white/10 py-9 md:grid-cols-[220px_1fr]">
-                <div>
+              <div className="grid min-w-0 gap-5 border-t border-white/10 py-8 sm:gap-6 sm:py-9 md:grid-cols-[220px_minmax(0,1fr)]">
+                <div className="min-w-0">
                   <p className="font-mono text-xs text-white/35">
                     2023 — PRESENT
                   </p>
@@ -84,12 +84,12 @@ export default function About() {
                   </p>
                 </div>
 
-                <div>
-                  <h2 className="text-2xl font-medium">
+                <div className="min-w-0">
+                  <h2 className="break-words text-xl font-medium sm:text-2xl">
                     Full-Stack Software Development
                   </h2>
 
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-white/45">
+                  <p className="mt-4 max-w-3xl break-words text-sm leading-7 text-white/45">
                     Building full-stack applications, AI-enabled prototypes,
                     mobile platforms, APIs, and research-oriented software
                     systems while developing engineering depth across the
@@ -99,23 +99,23 @@ export default function About() {
               </div>
 
               {/* Maritime / Logistics */}
-              <div className="grid gap-6 border-t border-white/10 py-9 md:grid-cols-[220px_1fr]">
-                <div>
+              <div className="grid min-w-0 gap-5 border-t border-white/10 py-8 sm:gap-6 sm:py-9 md:grid-cols-[220px_minmax(0,1fr)]">
+                <div className="min-w-0">
                   <p className="font-mono text-xs text-white/35">
                     2021 — 2023
                   </p>
 
-                  <p className="mt-2 text-sm text-white/50">
+                  <p className="mt-2 break-words text-sm text-white/50">
                     CMA-CGM / Joatelim Logistics
                   </p>
                 </div>
 
-                <div>
-                  <h2 className="text-2xl font-medium">
+                <div className="min-w-0">
+                  <h2 className="break-words text-xl font-medium sm:text-2xl">
                     Terminal Yard Operations
                   </h2>
 
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-white/45">
+                  <p className="mt-4 max-w-3xl break-words text-sm leading-7 text-white/45">
                     Experience working with container tracking, operational
                     coordination, logistics workflows, and data-driven
                     processes. This practical background informs my interest
@@ -128,66 +128,62 @@ export default function About() {
         </section>
 
         {/* EDUCATION & PROFESSIONAL DEVELOPMENT */}
-        <section className="border-t border-white/10 px-6 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[180px_1fr]">
-            <p className="font-mono text-xs tracking-[0.2em] text-white/35">
+        <section className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-8 md:grid-cols-[180px_minmax(0,1fr)] md:gap-12">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 sm:text-xs">
               EDUCATION
             </p>
 
-            <div>
+            <div className="min-w-0">
               {/* EDUCATION */}
               <div className="space-y-0">
                 {/* NYCAR */}
-                <div className="grid gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_1fr]">
-                  <p className="font-mono text-xs text-white/30">
-                    2026
-                  </p>
+                <div className="grid min-w-0 gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_minmax(0,1fr)]">
+                  <p className="font-mono text-xs text-white/30">2026</p>
 
-                  <div>
-                    <h2 className="text-xl font-medium sm:text-2xl">
+                  <div className="min-w-0">
+                    <h2 className="break-words text-xl font-medium sm:text-2xl">
                       Postgraduate Diploma
                     </h2>
 
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-white/50">
+                    <p className="mt-2 max-w-2xl break-words text-sm leading-6 text-white/50">
                       Advanced Engineering Management & Software Engineering
                       Management
                     </p>
 
-                    <p className="mt-1 text-xs text-white/30">
+                    <p className="mt-1 break-words text-xs text-white/30">
                       New York Center for Advance Research (NYCAR)
                     </p>
                   </div>
                 </div>
 
                 {/* PLP */}
-                <div className="grid gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_1fr]">
-                  <p className="font-mono text-xs text-white/30">
-                    2024
-                  </p>
+                <div className="grid min-w-0 gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_minmax(0,1fr)]">
+                  <p className="font-mono text-xs text-white/30">2024</p>
 
-                  <div>
-                    <h2 className="text-xl font-medium sm:text-2xl">
+                  <div className="min-w-0">
+                    <h2 className="break-words text-xl font-medium sm:text-2xl">
                       Software Engineering & Web Development
                     </h2>
 
-                    <p className="mt-1 text-xs text-white/30">
+                    <p className="mt-1 break-words text-xs text-white/30">
                       Power Learn Project (PLP)
                     </p>
                   </div>
                 </div>
 
                 {/* B.Tech */}
-                <div className="grid gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_1fr]">
+                <div className="grid min-w-0 gap-3 border-t border-white/10 py-7 md:grid-cols-[120px_minmax(0,1fr)]">
                   <p className="font-mono text-xs text-white/30">
                     1998 — 2004
                   </p>
 
-                  <div>
-                    <h2 className="text-xl font-medium sm:text-2xl">
+                  <div className="min-w-0">
+                    <h2 className="break-words text-xl font-medium sm:text-2xl">
                       B.Tech in Computer Science (Software Engineering)
                     </h2>
 
-                    <p className="mt-1 text-xs text-white/30">
+                    <p className="mt-1 break-words text-xs text-white/30">
                       Ladoke Akintola University of Technology (LAUTECH)
                     </p>
                   </div>
@@ -195,58 +191,52 @@ export default function About() {
               </div>
 
               {/* CERTIFICATIONS & PROFESSIONAL DEVELOPMENT */}
-              <div className="mt-14">
-                <p className="font-mono text-xs tracking-[0.2em] text-white/30">
+              <div className="mt-12 sm:mt-14">
+                <p className="font-mono text-[10px] tracking-[0.2em] text-white/30 sm:text-xs">
                   CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
                 </p>
 
                 <div className="mt-5 space-y-0">
                   {/* Project Management */}
-                  <div className="grid gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_1fr]">
-                    <p className="font-mono text-xs text-white/30">
-                      2024
-                    </p>
+                  <div className="grid min-w-0 gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_minmax(0,1fr)]">
+                    <p className="font-mono text-xs text-white/30">2024</p>
 
-                    <div>
-                      <h3 className="text-base font-medium">
+                    <div className="min-w-0">
+                      <h3 className="break-words text-base font-medium">
                         Fundamentals of Project Management
                       </h3>
 
-                      <p className="mt-1 text-xs text-white/30">
+                      <p className="mt-1 break-words text-xs text-white/30">
                         DEXA / Open University UK / TeamGantt
                       </p>
                     </div>
                   </div>
 
                   {/* NIIT Networking */}
-                  <div className="grid gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_1fr]">
-                    <p className="font-mono text-xs text-white/30">
-                      2013
-                    </p>
+                  <div className="grid min-w-0 gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_minmax(0,1fr)]">
+                    <p className="font-mono text-xs text-white/30">2013</p>
 
-                    <div>
-                      <h3 className="text-base font-medium">
+                    <div className="min-w-0">
+                      <h3 className="break-words text-base font-medium">
                         Protocols & Networking Standards
                       </h3>
 
-                      <p className="mt-1 text-xs text-white/30">
+                      <p className="mt-1 break-words text-xs text-white/30">
                         NIIT
                       </p>
                     </div>
                   </div>
 
                   {/* NIIT PC Support */}
-                  <div className="grid gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_1fr]">
-                    <p className="font-mono text-xs text-white/30">
-                      2013
-                    </p>
+                  <div className="grid min-w-0 gap-3 border-t border-white/10 py-6 md:grid-cols-[120px_minmax(0,1fr)]">
+                    <p className="font-mono text-xs text-white/30">2013</p>
 
-                    <div>
-                      <h3 className="text-base font-medium">
+                    <div className="min-w-0">
+                      <h3 className="break-words text-base font-medium">
                         PC Support & Maintenance
                       </h3>
 
-                      <p className="mt-1 text-xs text-white/30">
+                      <p className="mt-1 break-words text-xs text-white/30">
                         NIIT
                       </p>
                     </div>
@@ -258,22 +248,22 @@ export default function About() {
         </section>
 
         {/* CTA */}
-        <section className="border-t border-white/10 px-6 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-mono text-xs tracking-[0.2em] text-white/30">
+        <section className="border-t border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto min-w-0 max-w-7xl">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-white/30 sm:text-xs">
               NEXT
             </p>
 
-            <h2 className="mt-5 max-w-4xl text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 max-w-4xl break-words text-2xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
               Interested in the systems I build?
             </h2>
 
             <Link
               to="/work"
-              className="mt-8 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white"
+              className="mt-8 inline-flex max-w-full items-center gap-2 text-sm text-white/60 transition hover:text-white"
             >
               Explore my work
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} className="shrink-0" />
             </Link>
           </div>
         </section>
